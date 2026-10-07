@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable · Mathieu Ouillon</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <script>
+    // Avant, le cours « Du noyau au réacteur » vivait à la racine du domaine.
+    // Les anciens liens (/posts/…, /glossaire/…) sont renvoyés vers sa nouvelle adresse.
+    (function () {
+      var ancien = /^\/(posts|assets|glossaire|code|bibliographie|about|archives|categories|tags)(\/|$)/;
+      var chemin = location.pathname;
+      if (ancien.test(chemin)) {
+        location.replace('/du-noyau-au-reacteur' + chemin + location.search + location.hash);
+      }
+    })();
+  </script>
+  <style>
+    :root { --bg: #f7f5f0; --text: #26231f; --muted: #6b645a; --lien: #0b57b0; }
+
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #16181c; --text: #ece9e2; --muted: #a29c90; --lien: #6ab0ff; }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      background: var(--bg);
+      color: var(--text);
+      font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    main { max-width: 30rem; }
+    h1 { margin: 0 0 0.5rem; font: 700 2rem/1.2 Georgia, "Times New Roman", serif; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+    ul { margin: 0; padding-left: 1.25rem; }
+    a { color: var(--lien); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Page introuvable</h1>
+    <p>Cette adresse ne mène à rien. Vous cherchiez peut-être&nbsp;:</p>
+    <ul>
+      <li><a href="/du-noyau-au-reacteur/">le cours Du noyau au réacteur</a></li>
+      <li><a href="/recettes/">les recettes</a></li>
+      <li><a href="/">la page d'accueil</a></li>
+    </ul>
+  </main>
+</body>
+</html>
